@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.github.holyvslin.cnnrecmerge.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="原图像压缩比例(1~100%): " />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etScaleRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="10"
+            android:inputType="number"
+            android:text="10" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="子图边缘填充比例(1~100%): " />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPaddingRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="20"
+            android:inputType="number"
+            android:text="20" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TableRow
+            android:gravity="center">
+            <Button
+                android:id="@+id/imgChooseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:background="@drawable/view_yuan_button"
+                android:text="选择图像"/>
+
+            <Button
+                android:id="@+id/imgProcessButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:background="@drawable/view_yuan_button"
+                android:text="处理图像" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <Switch
+                android:id="@+id/modelPruningSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:showText="true"
+                android:text="模型轻量化"
+                android:textOff="关闭"
+                android:textOn="打开"
+                android:thumb="@drawable/thumb"
+                android:track="@drawable/track" />
+
+            <Button
+                android:id="@+id/startRecognitionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:background="@drawable/view_yuan_button"
+                android:text="开始识别" />
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/originalImgView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="1dp"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/midPreProcessImgView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="1dp"
+                android:scaleType="fitXY" />
+
+        </TableRow>
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/originalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/midPreProcessTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+
+        </TableRow>
+        
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/imgprocTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <ImageView
+        android:id="@+id/preProcessImgView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/preProcessTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/cnnrecTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>

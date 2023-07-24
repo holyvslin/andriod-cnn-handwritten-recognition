@@ -1,0 +1,40 @@
+before 2021/01/31: 边缘检测，模型选择，模型输入预处理，单数字识别
+2021/02/01: 修改最佳阈值
+黑底白字
+down minGray i: 135 backgroudCount:9058 backgroundSum:144928
+up minGray i: 255 foregroundCount:942 foregroundSum:240210
+ Count of White: 942 Count of black: 9058
+bestThreshold: 135
+白底黑字
+down minGray i: 135 backgroudCount:108277 backgroundSum:1737368
+up minGray i: 255 foregroundCount:273131 foregroundSum:69648405
+ backgroundAvg:16 foregroundAvg:255 newThreshold:135 index:1
+ Count of White: 273131 Count of black: 108277
+bestThreshold: 135
+
+realPath:/storage/emulated/0/DCIM/8_1612097568085_Y0_X0.jpg
+resize前反色 512x650
+I/MainActivity: 原图是白底黑字，需要反色 toInverse    
+计算反色耗时：2415ms
+resize后反色 28x28
+计算反色耗时：17ms
+
+不分割识别
+D/MainActivity: outSoftmax: [3.6010708E-5, 1.5700409E-5, 9.0562426E-5, 1.6429418E-4, 3.955108E-5, 3.2797398E-4, 7.8424E-5, 3.1035224E-6, 0.9991049, 1.3952458E-4]
+D/MainActivity: Recognize Result: 8
+分割子图后识别
+D/MainActivity: outSoftmax: [1.2369637E-4, 6.505294E-4, 2.9571715E-4, 0.39222088, 4.2341067E-4, 0.021346072, 1.6059182E-4, 0.58442855, 4.2286083E-5, 3.0825057E-4]
+D/MainActivity: Recognize Result: 7
+
+2021/03/10:
+优化模型，
+（1）4个3x3卷积层替换掉2个5x5卷积层 
+（2）动态学习率替换固定学习率 
+（3）根据MINST数据集特点，数字外接边框20x20中心区域，画布28x28，边缘填充从10%修改成20%
+
+
+
+
+2021/03/12：
+加入边缘填充可输入布局
+控制高宽比在一定的区间，正常数字都是高偏大，宽偏小

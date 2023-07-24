@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OK_Paper_cnnrec_0530_merge.iml" filepath="$PROJECT_DIR$/OK_Paper_cnnrec_0530_merge.iml" group="OK_Paper_cnnrec_0530_merge" />
+      <module fileurl="file://$PROJECT_DIR$/app/OK_Paper_cnnrec_0530_merge.app.iml" filepath="$PROJECT_DIR$/app/OK_Paper_cnnrec_0530_merge.app.iml" group="OK_Paper_cnnrec_0530_merge/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
